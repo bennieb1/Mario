@@ -62,7 +62,7 @@ public class playerHealthController : Singelton<playerHealthController>
                 invincableCounter = invincableLength;
                 sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .5f);
                 PlayerController.Instance.KnockBack();
-                AudioManager.Instance.PlaySfx(9);
+                //AudioManager.Instance.PlaySfx(9);
             }
 
             

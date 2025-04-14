@@ -21,6 +21,7 @@ public class DamagePlayer : MonoBehaviour
         {
 
            playerHealthController.Instance.DealDamage();
+           MarioSizeController.Instance.Shrink();
         }
     }
 }
