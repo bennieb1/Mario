@@ -12,7 +12,7 @@ public class playerHealthController : Singelton<playerHealthController>
 
     public float invincableCounter;
 
-    private SpriteRenderer sr;
+    public SpriteRenderer sr;
     
     public Animator anim;
 

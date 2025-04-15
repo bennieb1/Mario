@@ -2,74 +2,106 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    [Header("Bullet Settings")]
-    [Tooltip("The bullet prefab to fire (must have a Rigidbody2D)")]
-    public GameObject bulletPrefab;
-    [Tooltip("Local point (child transform) where bullets appear")]
-    public Transform firePoint;
-    [Tooltip("Initial speed of the bullet")]
+   [Header("Bullet Settings")]
+    public GameObject bulletPrefab;      // must have a Rigidbody2D + SpriteRenderer
+    public Transform firePoint;          // child at muzzle, flipped in X
     public float bulletSpeed = 5f;
-    [Tooltip("Direction in which to shoot (e.g. (0,1) = straight up)")]
-    public Vector2 shootDirection = Vector2.up;
 
-    [Header("Firing Rate")]
-    [Tooltip("Seconds between shots")]
-    public float fireInterval = 2f;
+    [Header("Target")]
+    public Transform target;             // e.g. Mario
 
-    private float fireTimer;
+    [Header("Firing Interval")]
+    public float minFireInterval = 1f;
+    public float maxFireInterval = 3f;
+
+    float fireTimer;
+    Vector3 baseFireLocalPos;
 
     void Start()
     {
-        if (bulletPrefab == null || firePoint == null)
-            Debug.LogError("Cannon: Assign both bulletPrefab and firePoint!", this);
+        if (bulletPrefab==null || firePoint==null)
+            Debug.LogError("Cannon missing bulletPrefab or firePoint!", this);
 
-        fireTimer = fireInterval;
+        // target may be null in the Inspector, so check that later
+        baseFireLocalPos = firePoint.localPosition;
+        ResetFireTimer();
     }
 
     void Update()
     {
+        // If there's no valid target, do nothing
+        if (target == null) return;
+
+        // Only tick down if our muzzle is on screen
+        if (!IsInView(firePoint.position)) return;
+
         fireTimer -= Time.deltaTime;
         if (fireTimer <= 0f)
         {
             Fire();
-            fireTimer = fireInterval;
+            ResetFireTimer();
         }
     }
 
-    private void Fire()
+    void ResetFireTimer()
     {
-        // Instantiate bullet
-        GameObject bullet = Instantiate(
-            bulletPrefab,
-            firePoint.position,
-            Quaternion.identity
+        float a = Mathf.Min(minFireInterval, maxFireInterval);
+        float b = Mathf.Max(minFireInterval, maxFireInterval);
+        fireTimer = Random.Range(a, b);
+    }
+
+    void Fire()
+    {
+        // Guard against missing target
+        if (target == null) return;
+
+        // 1) Flip the firePoint to face Mario horizontally
+        float sign = (target.position.x > transform.position.x) ? 1f : -1f;
+        firePoint.localPosition = new Vector3(
+            Mathf.Abs(baseFireLocalPos.x) * sign,
+            baseFireLocalPos.y,
+            baseFireLocalPos.z
         );
 
-        // Give it a Rigidbody2D velocity and zero gravity
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        // 2) Determine bullet direction from the firePoint offset
+        float dirX = Mathf.Sign(firePoint.localPosition.x);
+        Vector2 dir = new Vector2(dirX, 0f);
+
+        // 3) Spawn the bullet
+        var bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+        // 4) Physics
+        var rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.gravityScale = 0f;  // disable gravity
-            rb.linearVelocity     = shootDirection.normalized * bulletSpeed;
+            rb.gravityScale = 0f;
+            rb.linearVelocity     = dir * bulletSpeed;
             rb.constraints  = RigidbodyConstraints2D.FreezeRotation;
         }
-        else
+        else Debug.LogWarning("Cannon: bullet prefab missing Rigidbody2D", bullet);
+
+        // 5) Flip the bullet's sprite when firing right
+        var sr = bullet.GetComponent<SpriteRenderer>();
+        if (sr != null)
         {
-            Debug.LogWarning("Cannon: Bullet prefab has no Rigidbody2D!", bullet);
+            sr.flipX = dirX > 0f;
         }
     }
 
-    // Draw a little gizmo so you can see the fire point & direction in Scene view
+    bool IsInView(Vector2 pos)
+    {
+        var vp = Camera.main.WorldToViewportPoint(pos);
+        return vp.z > 0 && vp.x >= 0 && vp.x <= 1 && vp.y >= 0 && vp.y <= 1;
+    }
+
     void OnDrawGizmos()
     {
-        if (firePoint != null)
+        if (firePoint != null && target != null)
         {
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(firePoint.position, 0.1f);
-            Gizmos.DrawLine(
-                firePoint.position,
-                firePoint.position + (Vector3)shootDirection.normalized
-            );
+            float sign = (target.position.x > transform.position.x) ? 1f : -1f;
+            Gizmos.DrawLine(firePoint.position, firePoint.position + Vector3.right * sign * 0.5f);
         }
     }
 }

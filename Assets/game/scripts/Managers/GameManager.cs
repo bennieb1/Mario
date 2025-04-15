@@ -66,15 +66,24 @@ public class GameManager : Singelton<GameManager>
     {
         if (!IsMarioBig)
         {
-            // Mario is small → die
-            PlayerController.Instance.Die();
+            // small Mario → lose a life
+            Lives--;
+            OnHUDChanged?.Invoke(Score, Coins, Lives);
+
+            if (Lives > 0)
+            {
+                RespawnManager.Instance.RespawnPlayer();
+            }
+            else
+            {
+                // no lives left → death animation then game over
+                PlayerController.Instance.Die();
+            }
         }
         else
         {
-            // Mario is big → shrink him
+            // big Mario → shrink
             MarioSizeController.Instance.Shrink();
-            // notify the manager that he’s now small
-            SetMarioBig(false);
         }
     }
 }

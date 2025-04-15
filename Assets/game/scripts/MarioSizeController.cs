@@ -151,4 +151,11 @@ public class MarioSizeController : Singelton<MarioSizeController>
         anim.SetBool("hasFireFlower", currentForm == MarioForm.Fire);
         anim.SetBool("isStar",        currentForm == MarioForm.Star);
     }
+    public void ResetToSmall()
+    {
+        currentForm = MarioForm.Small;
+        ApplyFormState();
+        GameManager.Instance.SetMarioBig(false);
+    }
+
 }

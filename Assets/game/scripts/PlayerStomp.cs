@@ -22,5 +22,11 @@ public class PlayerStomp : MonoBehaviour
             Destroy(other);
            PlayerController.Instance.Bounce();
         }
+        
+        if(other.CompareTag("Bullet"))
+        {
+            Destroy(other.gameObject);
+            PlayerController.Instance.Bounce();
+        }
     }
 }
