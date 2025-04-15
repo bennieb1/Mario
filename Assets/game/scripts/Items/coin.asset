@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: coin
   m_EditorClassIdentifier: 
   displayName: 
-  icon: {fileID: 0}
+  icon: {fileID: 604851176, guid: 9e537e27862978242bd76e73100b0084, type: 3}
   itemType: 0
   powerUpType: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: 5491121722948081972, guid: 767fd25ca7803234da8eb76869e14fc8, type: 3}
   spawnSound: {fileID: 0}
   spawnOffset: {x: 0, y: 0}
