@@ -22,7 +22,11 @@ public class GameManager : Singelton<GameManager>
         Score = 0;
         Coins = 0;
     }
-  
+    public void AddScore(int points)
+    {
+        Score += points;
+        OnHUDChanged?.Invoke(Score, Coins, Lives);
+    }
     public void CollectItem(ItemData itemData)
     {
         switch (itemData.itemType)
