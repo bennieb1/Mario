@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: b7fa13f38eae3eb47b854e66255acf1a
+guid: 9e537e27862978242bd76e73100b0084
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -942738762157361450
-    second: marioLarge2_0
+      213: -3723287635892050414
+    second: coin1-Sheet-export_0
   - first:
-      213: 6202543543411572775
-    second: marioLarge2_1
+      213: -3789531689571576329
+    second: coin1-Sheet-export_1
   - first:
-      213: 6049416565337241430
-    second: marioLarge2_2
+      213: -1454759241362452270
+    second: coin1-Sheet-export_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: marioLarge2_0
+      name: coin1-Sheet-export_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf9cba34f96436f4c9ac69624356bb94
-      internalID: 38034587
+      spriteID: 657934299b9e5cc4ca276e6e3c4e1fd2
+      internalID: 604851176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marioLarge2_1
+      name: coin1-Sheet-export_1
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0c4eeb7012729c4d8b3a68db27d7cf1
-      internalID: -1415970772
+      spriteID: ed474e8a8fc2e074981e28856bb0d340
+      internalID: -1185089451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marioLarge2_2
+      name: coin1-Sheet-export_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77b350bce5de2934d8091b833678ca1d
-      internalID: -225167793
+      spriteID: 5d9babace909ce04faec1768d047cba3
+      internalID: 247138481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marioLarge2_3
+      name: coin1-Sheet-export_3
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 16
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,74 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce6b6ad81b9fb764ba9b2c900f4c5416
-      internalID: 1735434282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marioLarge2_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ab3e189161c03840a6ee127ceb8ab2e
-      internalID: 808898380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marioLarge2_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e36582c7f804834f9d8758682d83189
-      internalID: 1306977430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: marioLarge2_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 532691c54bb7e974088560625c95650f
-      internalID: 1446158728
+      spriteID: 41baa8ad138173e4d96a8c8f5ff4e939
+      internalID: 968255305
       vertices: []
       indices: 
       edges: []
@@ -276,7 +210,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c4e9c9056d2da5945a9a4d537042ce7f
+    spriteID: 8bb453a702a94fd4083098f06995c550
     internalID: 0
     vertices: []
     indices: 
@@ -286,13 +220,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      marioLarge2_0: 38034587
-      marioLarge2_1: -1415970772
-      marioLarge2_2: -225167793
-      marioLarge2_3: 1735434282
-      marioLarge2_4: 808898380
-      marioLarge2_5: 1306977430
-      marioLarge2_6: 1446158728
+      coin1-Sheet-export_0: 604851176
+      coin1-Sheet-export_1: -1185089451
+      coin1-Sheet-export_2: 247138481
+      coin1-Sheet-export_3: 968255305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

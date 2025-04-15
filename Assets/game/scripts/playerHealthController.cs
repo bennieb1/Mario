@@ -13,6 +13,8 @@ public class playerHealthController : Singelton<playerHealthController>
     public float invincableCounter;
 
     private SpriteRenderer sr;
+    
+    public Animator anim;
 
     //public GameObject deathEffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -62,6 +64,7 @@ public class playerHealthController : Singelton<playerHealthController>
                 invincableCounter = invincableLength;
                 sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .5f);
                 PlayerController.Instance.KnockBack();
+              
                 //AudioManager.Instance.PlaySfx(9);
             }
 
@@ -71,6 +74,7 @@ public class playerHealthController : Singelton<playerHealthController>
 
     public void HealPlayer()
     {
-        
+        MarioSizeController.Instance.Grow();
+        anim.SetBool("Mushroom", true);
     }
 }

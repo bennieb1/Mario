@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : Singelton<PlayerController>
@@ -15,6 +16,7 @@ public class PlayerController : Singelton<PlayerController>
     public float KnockBackLength, KnockBackForce;
     private float KnoackBackCounter;
     private Animator anim;
+    private bool isDead = false;
 
     public float BounceFource;
     public bool stopInput;
@@ -30,7 +32,7 @@ public class PlayerController : Singelton<PlayerController>
     // Update is called once per frame
     void Update()
     {
-       
+        if (isDead) return;
 
 
             if (KnoackBackCounter <= 0)
@@ -94,15 +96,37 @@ public class PlayerController : Singelton<PlayerController>
 
     public void KnockBack()
     {
-        KnoackBackCounter = KnockBackLength;
-        rb2.linearVelocity = new Vector2(0f, KnockBackForce);
-        anim.SetTrigger("Hurt");
-
+        GameManager.Instance.PlayerDamaged();
+              KnoackBackCounter = KnockBackLength;
+               rb2.linearVelocity = new Vector2(0f, KnockBackForce);
+           anim.SetTrigger("Hurt");
     }
 
     public void Bounce()
     {
         rb2.linearVelocity = new Vector2(rb2.linearVelocity.x, BounceFource);
        // AudioManager.Instance.PlaySfx(10);
+    }
+    
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+
+        // stop movement, trigger death anim
+        rb2.linearVelocity = Vector2.zero;
+        stopInput = true;
+        anim.SetTrigger("Dead");
+
+        StartCoroutine( OnDeathAnimationComplete() );
+    }
+
+    private IEnumerator OnDeathAnimationComplete()
+    {
+        // wait for the death clip to finish
+        var info = anim.GetCurrentAnimatorStateInfo(0);
+        yield return new WaitForSeconds(info.length + 0.1f);
+        //GameManager.Instance.TriggerGameOver();
+        Destroy(gameObject);
     }
 }

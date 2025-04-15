@@ -1,16 +1,28 @@
 fileFormatVersion: 2
-guid: b7fa13f38eae3eb47b854e66255acf1a
+guid: 78e2eb0e78c209b4baef13122dea114a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -942738762157361450
-    second: marioLarge2_0
+      213: -8452114971905622018
+    second: enemies-Sheet-export_0
   - first:
-      213: 6202543543411572775
-    second: marioLarge2_1
+      213: -8695710171889556595
+    second: enemies-Sheet-export_1
   - first:
-      213: 6049416565337241430
-    second: marioLarge2_2
+      213: 1763127127557426898
+    second: enemies-Sheet-export_2
+  - first:
+      213: 5246916082792326436
+    second: enemies-Sheet-export_3
+  - first:
+      213: 4416519918800931538
+    second: enemies-Sheet-export_4
+  - first:
+      213: 288929537384024080
+    second: enemies-Sheet-export_5
+  - first:
+      213: 8129767995339058607
+    second: enemies-Sheet-export_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: marioLarge2_0
+      name: enemies-Sheet-export_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf9cba34f96436f4c9ac69624356bb94
-      internalID: 38034587
+      spriteID: cf1d0607ea383474d91508aac31f4a46
+      internalID: 207240327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marioLarge2_1
+      name: enemies-Sheet-export_1
       rect:
         serializedVersion: 2
         x: 16
@@ -156,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0c4eeb7012729c4d8b3a68db27d7cf1
-      internalID: -1415970772
+      spriteID: 769310588de80a0458153159397fb53e
+      internalID: 1084207753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marioLarge2_2
+      name: enemies-Sheet-export_2
       rect:
         serializedVersion: 2
         x: 32
@@ -178,14 +190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77b350bce5de2934d8091b833678ca1d
-      internalID: -225167793
+      spriteID: 7d234168c953fe344afccff43361feb4
+      internalID: 803724112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marioLarge2_3
+      name: enemies-Sheet-export_3
       rect:
         serializedVersion: 2
         x: 48
@@ -200,14 +212,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce6b6ad81b9fb764ba9b2c900f4c5416
-      internalID: 1735434282
+      spriteID: 8efa3a067ba04c84e9f0f5cb5763fa69
+      internalID: 386993788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marioLarge2_4
+      name: enemies-Sheet-export_4
       rect:
         serializedVersion: 2
         x: 64
@@ -222,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ab3e189161c03840a6ee127ceb8ab2e
-      internalID: 808898380
+      spriteID: 9df62a7a29748c54fad97882b19ce638
+      internalID: -1128181457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marioLarge2_5
+      name: enemies-Sheet-export_5
       rect:
         serializedVersion: 2
         x: 80
@@ -244,14 +256,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e36582c7f804834f9d8758682d83189
-      internalID: 1306977430
+      spriteID: 3f7bc71e4ebf0654c83f932a1bb035a5
+      internalID: 895565806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marioLarge2_6
+      name: enemies-Sheet-export_6
       rect:
         serializedVersion: 2
         x: 96
@@ -266,8 +278,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 532691c54bb7e974088560625c95650f
-      internalID: 1446158728
+      spriteID: ee86a7d9e34e74343946b64033bb5b99
+      internalID: -1833968532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies-Sheet-export_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44226b70fb71afe4bbabda3bc72551f1
+      internalID: -1717594728
       vertices: []
       indices: 
       edges: []
@@ -276,7 +310,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c4e9c9056d2da5945a9a4d537042ce7f
+    spriteID: 060ac7f333f6b24488f649b72f0829f9
     internalID: 0
     vertices: []
     indices: 
@@ -286,13 +320,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      marioLarge2_0: 38034587
-      marioLarge2_1: -1415970772
-      marioLarge2_2: -225167793
-      marioLarge2_3: 1735434282
-      marioLarge2_4: 808898380
-      marioLarge2_5: 1306977430
-      marioLarge2_6: 1446158728
+      enemies-Sheet-export_0: 207240327
+      enemies-Sheet-export_1: 1084207753
+      enemies-Sheet-export_2: 803724112
+      enemies-Sheet-export_3: 386993788
+      enemies-Sheet-export_4: -1128181457
+      enemies-Sheet-export_5: 895565806
+      enemies-Sheet-export_6: -1833968532
+      enemies-Sheet-export_7: -1717594728
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
