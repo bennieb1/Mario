@@ -126,7 +126,7 @@ public class PlayerController : Singelton<PlayerController>
         // wait for the death clip to finish
         var info = anim.GetCurrentAnimatorStateInfo(0);
         yield return new WaitForSeconds(info.length + 0.1f);
-        //GameManager.Instance.TriggerGameOver();
+        GameManager.Instance.TriggerGameOver();
         Destroy(gameObject);
     }
 }
