@@ -27,6 +27,7 @@ public class PlayerController : Singelton<PlayerController>
     {
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+       
     }
 
     // Update is called once per frame
@@ -52,8 +53,9 @@ public class PlayerController : Singelton<PlayerController>
                 {
                     if (isGrounded)
                     {
+                       
                         rb2.linearVelocity = new Vector2(rb2.linearVelocity.x, jumpForce);
-                       // AudioManager.Instance.PlaySfx(10);
+                    
                     }
                     else
                     {
