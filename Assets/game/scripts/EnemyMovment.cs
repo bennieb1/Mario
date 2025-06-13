@@ -69,6 +69,12 @@ public class EnemyMovment : MonoBehaviour
     {
         // 3) Horizontal path movement
         if (path.CurrentPoint == null) return;
+        
+        // move enemy left to right without path following
+
+        Vector2 move = transform.position; 
+        Vector2 movementDir = move * Vector2.right * (speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movementDir);
 
         Vector2 pos    = transform.position;
         Vector2 target = path.CurrentPoint.position;

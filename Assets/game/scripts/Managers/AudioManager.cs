@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class AudioManager : Singelton<AudioManager>
 {
-   [SerializeField] private AudioSource[] soundFx;
+    [SerializeField] private AudioSource[] soundFx;
    
-   [SerializeField] private AudioSource bgm, levelEndMusic;
+    [SerializeField] private AudioSource bgm, levelEndMusic;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
