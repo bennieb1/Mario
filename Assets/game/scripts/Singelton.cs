@@ -11,7 +11,7 @@ public class Singelton<T> : MonoBehaviour where T : MonoBehaviour
         {
             Instance = this as T;
             // Persist across scenes (optional for GameManager)
-            DontDestroyOnLoad(gameObject);
+            
         }
         else if (Instance != this)
         {
