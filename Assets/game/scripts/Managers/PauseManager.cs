@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -52,11 +53,15 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
     }
 
-
-    /// <summary>Quit application (or stop playmode in editor)</summary>
+    /// <summary>
+    /// Load the first scene (build index 0) and reset time scale.
+    /// </summary>
     public void QuitGame()
     {
-        Application.Quit();
+        // Make sure time is running again
+        Time.timeScale = 1f;
 
+        // Load the very first scene in your Build Settings
+        SceneManager.LoadScene(0);
     }
 }

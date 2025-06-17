@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
 
 public class TitleMenu : MonoBehaviour
 {
- 
+    private void Start()
+    {
+        AudioManager.Instance.PlayMusic("MenuMusic");
+    }
 
     /// <summary>
     /// Hook this up to your Title-scene Play button’s OnClick.
@@ -10,6 +14,7 @@ public class TitleMenu : MonoBehaviour
     public void OnPlayButtonPressed()
     {
         GameManager.Instance.StartNewGame();
+        AudioManager.Instance.StopMusic();
     }
 
     /// <summary>
