@@ -8,6 +8,7 @@ public class GameManager : Singelton<GameManager>
     // === ADJUST THESE TO MATCH YOUR BUILD SETTINGS ===
     private const int TitleSceneBuildIndex = 0;
     private const int MainSceneBuildIndex  = 1;
+    private const int CreditsSceneBuildIndex = 2;
     // ==================================================
 
     public int Score { get; private set; }
@@ -158,6 +159,11 @@ public class GameManager : Singelton<GameManager>
     {
         ResetStats();
         SceneManager.LoadScene(MainSceneBuildIndex);
+    }
+    
+    public void LoadCreditsScene()
+    {
+        SceneManager.LoadScene(CreditsSceneBuildIndex);
     }
 
     #endregion

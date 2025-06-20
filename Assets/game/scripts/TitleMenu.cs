@@ -16,6 +16,12 @@ public class TitleMenu : MonoBehaviour
         GameManager.Instance.StartNewGame();
         AudioManager.Instance.StopMusic();
     }
+    
+    public void onCreditsButtonPressed()
+    {
+        GameManager.Instance.LoadCreditsScene();
+        AudioManager.Instance.StopMusic();
+    }
 
     /// <summary>
     /// (Optional) Hook this to a “Quit” button if desired.
@@ -23,5 +29,6 @@ public class TitleMenu : MonoBehaviour
     public void OnQuitButtonPressed()
     {
         Application.Quit();
+        AudioManager.Instance.StopMusic();
     }
 }
